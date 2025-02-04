@@ -278,7 +278,6 @@ function updateTotalBoxValue() {
     total_point_box.innerHTML = `${uppersum}/63`;
     if (uppersum >= 63) {
         uppersum += 35;
-        uppersum = 74
         bonus_point_box.innerHTML = `+35`;
         total_point_box.style.backgroundcolor = `rgb(250, 184, 0)`;
         bonus_point_box.style.backgroundcolor = `rgb(250, 184, 0)`;
