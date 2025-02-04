@@ -112,7 +112,7 @@ function possible_point_calculate() {
             smallstraight = false;
         }
     }
-    possible_point[9] = smallstraight ? 15 : 0;
+    possible_point[9] = smallstraight ? 30 : 0;
     //Large straight
     let largestraight = true;
     for (let i=0; i<5; i++){
