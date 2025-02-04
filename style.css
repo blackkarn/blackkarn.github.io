@@ -1,0 +1,187 @@
+body{
+    display: grid;
+    grid-template-columns: 1.2fr 3fr;
+    grid-template-rows: 1fr 1fr;
+    overflow:hidden; 
+}
+
+.wrap_sidebar {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    grid-template-rows: 4.5em repeat(8,3em) 1.5em 3em 1em repeat(5,3em) 1em 5em;
+    grid-gap: 1.5px; /* Remove the gap between grid items */
+
+    padding-left:20px;
+    padding-top: 10px;
+    padding-right:20px;
+    padding-bottom:10px;
+    background-color:rgb(158, 158, 158);
+    
+}
+.box {
+    border: 2px solid black;
+    background-color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size:1.5em;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
+}
+.game{
+    display:grid;
+    grid-template-columns:1fr 38em 1fr;
+    grid-template-rows:1fr 38em 1fr;
+    background-color:rgb(87, 40, 7)
+}
+
+.board{
+    aspect-ratio: 1/1;
+    background-color:green;
+    border-radius: 20px;
+}
+
+.stay{
+    background-color:gray;
+    border: 20px solid rgb(40, 40, 40);
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+    border-radius:20px;
+    box-sizing:border-box;
+}
+.contain{
+    box-sizing : border-box;
+    background-color:rgb(255, 255, 255);
+    aspect-ratio:1/1;
+    border: 10px solid rgb(40, 40, 40);
+    border-radius: 20px;
+    margin-left:-10px;
+    display:grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr 0.5fr;
+}
+.roll_dice_container {
+    position: absolute;
+    border-radius: 4px;
+    top: 50%;
+    left: 64%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap : 10px;
+}
+.roll_dice{
+    aspect-ratio: 1/1;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 4px;
+    width: 80px;
+    height: 80px;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr 0.5fr;
+    gap : 2px;
+}
+
+.dot{
+    background-color:white;
+    border-radius:50%;
+}
+
+.rdot{
+    background-color:white;
+    border-radius:50%;
+}
+
+.button_container{
+    position: absolute;
+    border-radius: 4px;
+    top: 70%;
+    left: 64%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.roll_button{
+    background-color:white;
+    border-radius: 4px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    font-size: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    border : 2px solid black;
+}
+.rolling{
+    animation: roll 0.5s linear;
+}
+
+#user{
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 4px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;  
+}
+
+#round{
+    border: 2px solid black;
+    background-color: rgb(255, 253, 159);
+    border-radius: 4px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;  
+}
+#total{
+    background-color: rgb(105, 178, 255);
+}
+#bonus{
+    background-color: rgb(205, 253, 205);
+
+}
+#total_point{
+    background-color: rgb(62, 62, 62);
+}
+#bonus_point{
+    background-color: rgb(62,62,62);
+}
+#grand_point{
+    background-color: rgb(62,62,62);
+}
+
+#roll_phase{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 10em;
+    height: 10em;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10em;
+    border-bottom-right-radius: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border : 5px solid black;
+    font-family : Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+#roll_phase_text{
+    font-size: 3em;
+}
+@keyframes roll {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
