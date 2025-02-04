@@ -27,7 +27,8 @@ const total_point_box = document.getElementById(`total_point`);
 const bonus_point_box = document.getElementById(`bonus_point`);
 const grand_total_point_box = document.getElementById(`grand_point`);
 const round_box = document.getElementById(`round`);
-
+const enterpoint = new Audio('./audio_files/enterpoint.ogg');
+const diceroll = new Audio('./audio_files/roll_dice.wav');
 var possible_point = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 function reset_all_values() {
     selected_point_box = 0;
@@ -433,6 +434,7 @@ function initializeHighlighter(){
 }
 function initializeRoller(){
     var rolling_dices = document.getElementsByClassName('roll_dice')
+        diceroll.play();
         selected_dice = 0;
         selected_rdice = 0;
         roll_phase+=1;
