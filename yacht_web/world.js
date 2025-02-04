@@ -228,6 +228,8 @@ function pointboard(event){
         document.removeEventListener('keydown', pointboard);
         round_phase += 1;
         show_round();
+        let audio = new Audio("./audio_files/levelup.ogg")
+        audio.play();
         return;
     }
     }
