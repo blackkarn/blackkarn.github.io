@@ -252,7 +252,7 @@ function updateTotalBoxValue() {
         uppersum += point_box_values[i];
     }
     total_point_box.innerHTML = `${uppersum}/63`;
-    if (uppersum === 63) {
+    if (uppersum >= 63) {
         uppersum += 35;
         bonus_point_box.innerHTML = `+35`;
     }
