@@ -77,7 +77,17 @@ function possible_point_calculate() {
     //Choice
     possible_point[6] = contained_dices.reduce((a, b) => a + b, 0);
     //4 of a kind
-    possible_point[7] = contained_dices.filter(x => contained_dices.filter(y => y === x).length >= 4).length * 4;
+    let fourkind = [0,0,0,0,0,0,0]
+    let is_fourkind = false;
+    for (let i = 0; i < 5; i++) {
+        fourkind[contained_dices[i]] += 1;
+    }
+    for (let i = 1; i <= 6; i++) {
+        if (fourkind[i] >= 4) {
+            is_fourkind = true;
+        }
+    }
+    possible_point[7] = is_fourkind ? contained_dices.reduce((a, b) => a + b, 0): 0;
     //Full house
     let fullhouse = false;
     let threes = false;
