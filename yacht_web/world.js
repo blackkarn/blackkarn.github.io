@@ -434,7 +434,6 @@ function initializeHighlighter(){
 }
 function initializeRoller(){
     var rolling_dices = document.getElementsByClassName('roll_dice')
-        diceroll.play();
         selected_dice = 0;
         selected_rdice = 0;
         roll_phase+=1;
@@ -454,6 +453,7 @@ function initializeRoller(){
             }else{
                 highlighting_row = 1;
             }
+            diceroll.play();
             showRollRDices();
             initializeHighlighter();
             if(roll_phase >= 3){
