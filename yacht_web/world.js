@@ -88,6 +88,7 @@ function possible_point_calculate() {
         }
     }
     possible_point[7] = is_fourkind ? contained_dices.reduce((a, b) => a + b, 0): 0;
+
     //Full house
     let fullhouse = false;
     let threes = false;
@@ -451,7 +452,7 @@ function initializeRoller(){
             }
             showRollRDices();
             initializeHighlighter();
-            if(roll_phase === 3){
+            if(roll_phase >= 3){
                 document.getElementById('roll_button').style.display = 'none';
                 document.removeEventListener('keydown', highlighter);
                 offallhighlights();
