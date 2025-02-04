@@ -94,15 +94,25 @@ function possible_point_calculate() {
     let fullhouse = false;
     let threes = false;
     let twos = false;
+
+    let yacht_full = false;
     for (let i = 1; i <= 6; i++) {
-        if (contained_dices.filter(x => x === i).length >= 3) {
-            threes = true;
-        }
-        if (contained_dices.filter(x => x === i).length >= 2) {
-            twos = true;
+        if (contained_dices.filter(x => x === i).length === 5) {
+            yacht_full = true;
         }
     }
-    if (threes && twos) {
+    let counter = [0,0,0,0,0,0,0]
+    for (let i = 0; i < 5; i++) {
+        counter[contained_dices[i]] += 1;
+    }
+    for (let i = 1; i <= 6; i++) {
+        if(counter[i] === 3){
+            threes = true
+        }else if(counter[i] === 2){
+            twos = true
+        }
+    }
+    if ((threes && twos) || yacht_full) {
         fullhouse = true;
     }
     possible_point[8] = fullhouse ? contained_dices.reduce((a, b) => a + b, 0): 0;
@@ -269,6 +279,8 @@ function updateTotalBoxValue() {
     if (uppersum >= 63) {
         uppersum += 35;
         bonus_point_box.innerHTML = `+35`;
+        total_point_box.style.color = `rgb(250, 184, 0)`;
+        bonus_point_box.style.color = `rgb(250, 184, 0)`;
     }
     for (let i = 6; i < 12; i++) {
         uppersum += point_box_values[i];
