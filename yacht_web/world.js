@@ -279,8 +279,8 @@ function updateTotalBoxValue() {
     if (uppersum >= 63) {
         uppersum += 35;
         bonus_point_box.innerHTML = `+35`;
-        total_point_box.style.backgroundcolor = `rgb(250, 184, 0)`;
-        bonus_point_box.style.backgroundcolor = `rgb(250, 184, 0)`;
+        total_point_box.style.backgroundColor = `rgb(250, 184, 0)`;
+        bonus_point_box.style.backgroundColor = `rgb(250, 184, 0)`;
     }
     for (let i = 6; i < 12; i++) {
         uppersum += point_box_values[i];
