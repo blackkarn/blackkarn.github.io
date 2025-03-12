@@ -32,3 +32,36 @@ function separateKorean(text) {
     }
     return result;
 }
+document.getElementById('copy').addEventListener('click', () => {
+    const answerText = document.getElementById('answer').innerText;
+    navigator.clipboard.writeText(answerText).then(() => {
+        console.log('Text copied to clipboard');
+        showTooltip('Text copied!');
+    }).catch(err => {
+        console.error('Failed to copy text: ', err);
+    });
+});
+function showTooltip(message) {
+    const tooltip = document.createElement('div');
+    tooltip.className = 'tooltip';
+    tooltip.innerText = message;
+    document.body.appendChild(tooltip);
+
+    const copyButton = document.getElementById('copy');
+    const buttonRect = copyButton.getBoundingClientRect();
+    const tooltipRect = tooltip.getBoundingClientRect();
+
+    tooltip.style.position = 'absolute';
+    tooltip.style.left = `${buttonRect.left + (buttonRect.width / 2) - (tooltipRect.width / 2)}px`;
+    tooltip.style.top = `${buttonRect.top - tooltipRect.height - 10}px`;
+    tooltip.style.backgroundColor = 'gray';
+    tooltip.style.color = 'white';
+    tooltip.style.padding = '2px 2px';
+    tooltip.style.borderRadius = '5px';
+    tooltip.style.boxShadow = '0 2px 5px rgba(57, 55, 55, 0.48)';
+    tooltip.style.zIndex = '1000';
+
+    setTimeout(() => {
+        tooltip.remove();
+    }, 1000);
+}
